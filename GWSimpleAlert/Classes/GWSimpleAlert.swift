@@ -33,6 +33,7 @@ public class GWAlert {
     
     public func show() {
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }

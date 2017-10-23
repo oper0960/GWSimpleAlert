@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GWSimpleAlert'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'Easy to use UIAlertController'
 
   s.description      = 'Simple UIAlertController and UIAlertAction'
