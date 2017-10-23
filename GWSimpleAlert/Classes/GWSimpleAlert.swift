@@ -1,5 +1,5 @@
 
-public class Alert {
+public class GWAlert {
     
     private var alert = UIAlertController()
     private var controllerTitle = ""
@@ -14,16 +14,18 @@ public class Alert {
     }
     
     private func setAlert() {
-        self.alert = UIAlertController(title: self.controllerTitle, message: self.controllerMessage, preferredStyle: self.controllerStyle)
+        self.alert = UIAlertController(title: self.controllerTitle,
+                                       message: self.controllerMessage,
+                                       preferredStyle: self.controllerStyle)
     }
     
-    public func setActionOK(title: String, complete: @escaping (UIAlertAction) -> (Void)) -> Alert {
+    public func setActionOK(title: String, complete: @escaping (UIAlertAction) -> (Void)) -> GWAlert {
         let okAction = UIAlertAction(title: title, style: .default, handler: complete)
         self.alert.addAction(okAction)
         return self
     }
     
-    public func setActionCancel(title: String, complete: @escaping (UIAlertAction) -> (Void)) -> Alert {
+    public func setActionCancel(title: String, complete: @escaping (UIAlertAction) -> (Void)) -> GWAlert {
         let cancelAction = UIAlertAction(title: title, style: .default, handler: complete)
         self.alert.addAction(cancelAction)
         return self
@@ -35,25 +37,6 @@ public class Alert {
                 topController = presentedViewController
             }
             topController.present(self.alert, animated: true, completion: nil)
-            // topController should now be your topmost view controller
         }
-    }
-}
-
-public extension UIApplication {
-    
-    public class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        if let nav = base as? UINavigationController {
-            return topViewController(base: nav.visibleViewController)
-        }
-        if let tab = base as? UITabBarController {
-            if let selected = tab.selectedViewController {
-                return topViewController(base: selected)
-            }
-        }
-        if let presented = base?.presentedViewController {
-            return topViewController(base: presented)
-        }
-        return base
     }
 }
