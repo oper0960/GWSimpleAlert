@@ -19,15 +19,26 @@ public class GWAlert {
                                        preferredStyle: self.controllerStyle)
     }
     
-    public func setActionOK(title: String, complete: @escaping (UIAlertAction) -> (Void)) -> GWAlert {
+    public func setActionOK(title: String, complete: @escaping (UIAlertAction) -> (Void), tfHandler: ((String) -> Void)? = nil) -> GWAlert {
         let okAction = UIAlertAction(title: title, style: .default, handler: complete)
         self.alert.addAction(okAction)
+        if let tf = self.alert.textFields?.first?.text {
+            tfHandler!(tf)
+        }
         return self
     }
     
     public func setActionCancel(title: String, complete: @escaping (UIAlertAction) -> (Void)) -> GWAlert {
         let cancelAction = UIAlertAction(title: title, style: .default, handler: complete)
         self.alert.addAction(cancelAction)
+        return self
+    }
+    
+    public func addTextField(placeholder ph: String, keyboardType kt: UIKeyboardType) -> GWAlert {
+        self.alert.addTextField { (textField) in
+            textField.placeholder = ph
+            textField.keyboardType = kt
+        }
         return self
     }
     

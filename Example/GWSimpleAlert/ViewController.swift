@@ -10,15 +10,22 @@ import UIKit
 import GWSimpleAlert
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GWAlert(title: "2", message: "2", style: .alert)
+            .addTextField(placeholder: "33", keyboardType: .default)
+            .setActionOK(title: "333444", complete: { _ in
+                
+            })
+            .show()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
