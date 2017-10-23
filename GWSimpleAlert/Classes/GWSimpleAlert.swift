@@ -30,8 +30,12 @@ public class Alert {
     }
     
     public func show() {
-        if let topController = UIApplication.topViewController() {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
             topController.present(self.alert, animated: true, completion: nil)
+            // topController should now be your topmost view controller
         }
     }
 }
