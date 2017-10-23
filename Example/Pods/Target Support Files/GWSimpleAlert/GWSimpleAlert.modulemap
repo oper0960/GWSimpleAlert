@@ -1,0 +1,6 @@
+framework module GWSimpleAlert {
+  umbrella header "GWSimpleAlert-umbrella.h"
+
+  export *
+  module * { export * }
+}

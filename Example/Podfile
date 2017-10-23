@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GWSimpleAlert_Example' do
+  pod 'GWSimpleAlert', :path => '../'
+
+  target 'GWSimpleAlert_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

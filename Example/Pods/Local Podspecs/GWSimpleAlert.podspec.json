@@ -1,0 +1,22 @@
+{
+  "name": "GWSimpleAlert",
+  "version": "0.1.0",
+  "summary": "A short description of GWSimpleAlert.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Gilwan Ryu/GWSimpleAlert",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Gilwan Ryu": "opop_gwhi@naver.com"
+  },
+  "source": {
+    "git": "https://github.com/Gilwan Ryu/GWSimpleAlert.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "GWSimpleAlert/Classes/**/*"
+}

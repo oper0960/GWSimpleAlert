@@ -1,0 +1,16 @@
+PODS:
+  - GWSimpleAlert (0.1.0)
+
+DEPENDENCIES:
+  - GWSimpleAlert (from `../`)
+
+EXTERNAL SOURCES:
+  GWSimpleAlert:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GWSimpleAlert: b0101814b627dda6d8051fd0ee361b6678c152f2
+
+PODFILE CHECKSUM: e974e13c93a94c6204c288138dde073a4102f194
+
+COCOAPODS: 1.3.1
