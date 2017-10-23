@@ -7,16 +7,26 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Usage
+```swift
+GWAlert(title: "Title", message: "Message", style: .alert)
+           .setActionOK(title: "OKActionTitle", complete: { action in
+           // setOK Action
+           }).setActionCancel(title: "CancelActionTitle", complete: { action in
+           // setCancel Action
+           }).show()
+```
 
 ## Requirements
+
+Xcode 8+ , Swift 3.2+
 
 ## Installation
 
 GWSimpleAlert is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```swift
 pod 'GWSimpleAlert'
 ```
 
