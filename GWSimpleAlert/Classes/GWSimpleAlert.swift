@@ -6,10 +6,9 @@ public class GWAlert {
     private var controllerMessage = ""
     private var controllerStyle = UIAlertControllerStyle.alert
     
-    public init(title: String, message: String, style: UIAlertControllerStyle) {
+    public init(title: String, message: String) {
         self.controllerTitle = title
         self.controllerMessage = message
-        self.controllerStyle = style
         self.setAlert()
     }
     
@@ -19,12 +18,14 @@ public class GWAlert {
                                        preferredStyle: self.controllerStyle)
     }
     
-    public func setActionOK(title: String, complete: @escaping (UIAlertAction) -> (Void), tfHandler: ((String) -> Void)? = nil) -> GWAlert {
-        let okAction = UIAlertAction(title: title, style: .default, handler: complete)
-        self.alert.addAction(okAction)
-        if let tf = self.alert.textFields?.first?.text {
-            tfHandler!(tf)
-        }
+    public func setActionConfirm(title: String, complete: @escaping (UIAlertAction) -> (Void), tfHandler: ((String) -> (Void))? = nil) -> GWAlert {
+        let confirmAction = UIAlertAction(title: title, style: .default, handler: { action in
+            if let tf = self.alert.textFields?.first?.text {
+                tfHandler!(tf)
+            }
+            complete(action)
+        })
+        self.alert.addAction(confirmAction)
         return self
     }
     

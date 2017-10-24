@@ -14,12 +14,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GWAlert(title: "2", message: "2", style: .alert)
-            .addTextField(placeholder: "33", keyboardType: .default)
-            .setActionOK(title: "333444", complete: { _ in
-                
-            })
-            .show()
+        GWAlert(title: "Title", message: "Message")
+        .addTextField(placeholder: "placeholder", keyboardType: .default)
+        .setActionConfirm(title: "ActionTitle", complete: { action in
+            // Set Confirm Action
+        }, tfHandler: { text in // optional Handler
+            // Return TextField Text (optional)
+        })
+        .setActionCancel(title: "ActionTItle", complete: { action in
+            // set Cancel Action
+        }).show()
     }
     
     override func didReceiveMemoryWarning() {
